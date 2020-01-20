@@ -1,11 +1,11 @@
 name: Rebase against original repo
 
-#on: [push]
-on:
-  schedule:
-    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 23 * * *'
+on: [push]
+#on:
+#  schedule:
+#    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+#    # * is a special character in YAML so you have to quote this string
+#    - cron:  '0 23 * * *'
 
 env:
   GITHUB_TOKEN: ${{ secrets.github_token }}
@@ -27,5 +27,5 @@ jobs:
     - name: RUN `git pull master -r`
       run: |
         git remote add up https://github.com/hackmdio/codimd.git
-        git pull up master -r
-        git push origin HEAD:master --force
+        git pull up develop -r
+        git push origin HEAD:develop --force
