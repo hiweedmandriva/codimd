@@ -1,7 +1,7 @@
 name: Rebase against original repo
 
 
-3on: [push]
+#on: [push]
 on:
   schedule:
     # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
